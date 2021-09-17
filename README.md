@@ -45,6 +45,7 @@ Also available for golang [github/lovesaroha/lmath](https://github.com/lovesaroh
   // Print matrix values.
   matrix.Print()
 ```
+![image](https://raw.githubusercontent.com/lovesaroha/gimages/main/38.png)
 
 ### Create Random Matrix 
 
