@@ -67,7 +67,7 @@ Also available for golang [github/lovesaroha/lmath](https://github.com/lovesaroh
     lmath.ToMatrix([1, 2, 3]).Print()
     lmath.ToMatrix([[1, 2], [3, 4]]).Print()
     lmath.ToMatrix([4, 5, 6]).Print()
-        lmath.ToMatrix([[7, 8], [9, 0]]).Print()
+    lmath.ToMatrix([[7, 8], [9, 0]]).Print()
 ```
 ![image](https://raw.githubusercontent.com/lovesaroha/gimages/main/45.png)
 
