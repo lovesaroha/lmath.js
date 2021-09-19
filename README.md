@@ -1,5 +1,5 @@
 ## lmath.js
-This is a generalized math package with clean and transparent API for the javascript. Also available for golang [github/lovesaroha/lmath](https://github.com/lovesaroha/lmath) 
+This is a generalized math library with clean and transparent API for the javascript. Also available for golang [github/lovesaroha/lmath](https://github.com/lovesaroha/lmath) 
 
 ## Installation
 
@@ -168,6 +168,13 @@ This is a generalized math package with clean and transparent API for the javasc
 ![image](https://raw.githubusercontent.com/lovesaroha/gimages/main/44.png)
 
 ## Examples
+
+### Flappy-Bird-Game-AI
+A flappy bird game AI [github.com/lovesaroha/Flappy-Bird-Game-AI](https://github.com/lovesaroha/Flappy-Bird-Game-AI) trained with this library.
+
+![game](https://raw.githubusercontent.com/lovesaroha/gimages/main/9.png)
+
+[lovesaroha/p/Flappy-Bird-Game-AI](https://lovesaroha.com/p/Flappy-Bird-Game-AI)
 
 ### Logistic Regression (OR Gate)
 ```js 
