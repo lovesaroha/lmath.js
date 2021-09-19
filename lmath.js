@@ -283,21 +283,34 @@
     }
 
     // This function convert given value to matrix.
-    function ToMatrix(value) {
-        if (value.constructor == Array) {
+    function ToMatrix(values) {
+        if (values.constructor == Array) {
             // Convert to matrix.
-            let newMatrix = new MatrixObject(value.length, value[0].length);
-            for (let i = 0; i < newMatrix.rows; i++) {
-                newMatrix.values[i] = [];
-                for (let j = 0; j < newMatrix.cols; j++) {
-                    if (typeof value[i][j] != "number") {
-                        console.error(`lmath.js: Array contains invalid number at ${i}${j}!`);
+            if (values[0].constructor == Array) {
+                let newMatrix = new MatrixObject(values.length, values[0].length);
+                for (let i = 0; i < newMatrix.rows; i++) {
+                    newMatrix.values[i] = [];
+                    for (let j = 0; j < newMatrix.cols; j++) {
+                        if (typeof values[i][j] != "number") {
+                            console.error(`lmath.js: Array contains invalid number at ${i}${j}!`);
+                            return newMatrix;
+                        }
+                        newMatrix.values[i][j] = values[i][j];
+                    }
+                }
+                return newMatrix;
+            } else {
+                // Vector.
+                let newMatrix = new MatrixObject(values.length, 1);
+                for (let i = 0; i < newMatrix.rows; i++) {
+                    if (typeof values[i] != "number") {
+                        console.error(`lmath.js: Array contains invalid number at ${i}!`);
                         return newMatrix;
                     }
-                    newMatrix.values[i][j] = value[i][j];
+                    newMatrix.values.push([values[i]]);
                 }
+                return newMatrix;
             }
-            return newMatrix;
         }
         return new MatrixObject(0, 0);
     }
