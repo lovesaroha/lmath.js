@@ -215,6 +215,19 @@
                 }
                 newMatrix.values[i] = [sum];
             }
+            return newMatrix;
+        }
+
+        // Extend cols.
+        ColExtend(scale) {
+            let newMatrix = new MatrixObject(this.rows, scale);
+            for (let i = 0; i < newMatrix.rows; i++) {
+                newMatrix.values[i] = [];
+                for (let j = 0; j < newMatrix.cols; j++) {
+                    newMatrix.values[i][j] = this.values[i][0];
+                }
+            }
+            return newMatrix;
         }
     }
 
@@ -227,9 +240,19 @@
         }
         if (value instanceof MatrixObject) {
             // Argument is a matrix.
-            if (newMatrix.rows != value.rows || newMatrix.cols != value.cols) {
-                console.error("lmath.js: Number of rows and columns must be same!");
+            if (newMatrix.rows != value.rows) {
+                console.error("lmath.js: Number of rowsmust be same!");
                 return newMatrix;
+            }
+            if (newMatrix.cols != value.cols) {
+                if (newMatrix.cols == 1) {
+                    newMatrix = newMatrix.ColExtend(value.cols);
+                } else if (value.cols == 1) {
+                    value = value.ColExtend(newMatrix.cols);
+                } else {
+                    console.error("lmath.js: Number of cols must be same!");
+                    return newMatrix;
+                }
             }
             for (let i = 0; i < newMatrix.rows; i++) {
                 for (let j = 0; j < newMatrix.cols; j++) {
